@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-cream-50: #fcfcfb;
+  --color-cream-100: #FDFBF7; /* Theme Cream */
+  --color-cream-200: #f5f1e6;
+  --color-cream-300: #ebdfcb;
+  --color-cream-400: #ffd8bf;
+
+  --color-sage-50: #fafbfc;
+  --color-sage-100: #f1f3ee;
+  --color-sage-200: #e2e6db;
+  --color-sage-300: #ccd3be;
+  --color-sage-400: #b1bd9c;
+  --color-sage-500: #8A9A5B; /* Primary Sage Green */
+  --color-sage-600: #738249;
+  --color-sage-700: #5b673a;
+  --color-sage-900: #2c311c;
+
+  --color-gold-100: #faf7f2;
+  --color-gold-200: #f5ecd5;
+  --color-gold-300: #e8d9b8;
+  --color-gold-400: #dbaf92;
+  --color-gold-500: #C5A059; /* Warm Classic Design Gold */
+  --color-gold-600: #a78443;
+
+  --color-charcoal-700: #445465;
+  --color-charcoal-800: #2C3E50; /* Design Ink */
+  --color-charcoal-900: #1b2631;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-signature: "Pinyon Script", cursive;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* Custom aesthetic utility classes for the "Magazine Layout" */
+
+.magazine-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  .text-shadow-md {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* Smooth hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Elegant framed borders */
+.double-border {
+  border: 1px solid var(--color-gold-300);
+  padding: 4px;
+  position: relative;
+}
+.double-border::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 1px solid var(--color-gold-300);
+  pointer-events: none;
+}
+
+.ornate-corners {
+  position: relative;
+}
+.ornate-corners::before,
+.ornate-corners::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--color-gold-400);
+  border-style: solid;
+  pointer-events: none;
+}
+.ornate-corners::before {
+  top: 8px;
+  left: 8px;
+  border-width: 1px 0 0 1px;
+}
+.ornate-corners::after {
+  bottom: 8px;
+  right: 8px;
+  border-width: 0 1px 1px 0;
+}
+
+/* Perspective settings for envelope folding animations */
+.perspective-800 {
+  perspective: 800px;
+}
+
+/* Custom deck slide animations if fallback is helpful */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

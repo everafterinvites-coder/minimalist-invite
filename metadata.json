@@ -1,0 +1,8 @@
+{
+  "name": "Benedict & Sophie Wedding Invitation",
+  "description": "An interactive, elegant magazine-style digital wedding invitation for Benedict & Sophie's special day.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
